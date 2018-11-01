@@ -1,0 +1,10 @@
+<h1>Here's a list of your cocktails</h1>
+
+<% @cocktails.each do |cocktail| %>
+  <%= link_to cocktail.name, cocktail_path(cocktail) %> --
+  <%= link_to "", cocktail_path(cocktail),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class: "far fa-trash-alt" %><br>
+<% end %>
+<br><br>
+<%= link_to "Create new cocktail", new_cocktail_path %>
